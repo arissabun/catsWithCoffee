@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="css/cat.css"> <!-- Link to external CSS file -->
+</head>
+
+<body>
+    <header>
+        <h1>Cat with a Coffee</h1>
+        <p>Created, designed, and coded by Alyssa.</p>
+    </header>
+    
+    <main>
+
+    <div id="generateButton">
+        <button id ="generateCatButton" onclick="generateCat()">Generate a cat with a coffee</button>
+    </div>
+
+    <div id="haikuDiv"> 
+        <p>When you are done generating cats with coffee, press 
+            <a href="haiku.html" id="haikuLink">
+                <button id="haikuButton">Here</button>
+            </a>
+            to read a Haiku about cats with coffee.
+        </p>
+    </div>
+
+    <div id="catImageContainer">
+        <img id="catImage" src="graphics/cats/cat0.png">
+    </div>
+    
+    </main>
+
+    <script>
+        const catImagesSize = 6;
+        function generateCat() {
+            const randomIndex = Math.floor(Math.random() * catImagesSize);
+            document.getElementById("catImage").src = 
+                `graphics/cats/cat${randomIndex}.png`;
+        }
+    </script>
+</body>
+</html>
